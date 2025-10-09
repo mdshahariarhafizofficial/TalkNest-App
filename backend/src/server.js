@@ -11,6 +11,9 @@ const port = process.env.PORT || 3000;
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
+// middleware
+app.use(express.json());
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
   connectDB();
